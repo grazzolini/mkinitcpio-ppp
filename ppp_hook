@@ -1,0 +1,15 @@
+#!/usr/bin/ash
+
+run_hook ()
+{
+    if [ -n "${pppd.provider}" ]; then
+	provider="${pppd.provider}"
+    fi
+    echo "Starting ppp"
+    pppd call "${provider}"
+}
+
+run_cleanuphook ()
+{
+    killall pppd
+}
