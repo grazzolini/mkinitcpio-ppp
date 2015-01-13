@@ -2,7 +2,8 @@
 
 run_hook ()
 {
-    if [ -n "$ppp.provider" ]; then
+    if [ -n "$ppp.provider" -a -n "$ppp.device" ]; then
+	ip link set "$ppp.device" up
 	echo "Starting ppp"
 	pppd call "$ppp.provider"
     fi
@@ -10,5 +11,9 @@ run_hook ()
 
 run_cleanuphook ()
 {
-    killall pppd
+    if [ -n "$ppp.provider" -a -n "$ppp.device" ]; then
+	killall pppd
+        ip addr flush dev "$ppp.device"
+	ip link set down "$ppp.device"
+    fi
 }

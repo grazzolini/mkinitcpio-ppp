@@ -7,19 +7,21 @@ post_install() {
     depending on your provider configuration. It's advised to test if the connection
     works before adding the hooks and rebuilding your initramfs.
     
-    Afterwards add to your bootloader configuration a kernel parameter called
-    ppp.provider in which the value is the filename of the provider you created,
-    without the full path. This hook is suited for remote unlocking of an encrypted
-    root partition, using the dropbear_initrd_encrypt hooks. Add the "ppp" hook to
-    the "HOOKS" section in "/etc/mkinitcpio.conf" and rebuild the initramfs with 
-    ("mkinitcpio -p linux").
+    Afterwards add to your bootloader configuration two kernel parameters called
+    ppp.provider and ppp.device in which the ppp.provider value is the filename of
+    the provider you created, without the full path. The ppp.device is the physical
+    device used for the ppp connection, such as eth0 or eth1. This hook is suited
+    for remote unlocking of an encrypted root partition, using the
+    dropbear_initrd_encrypt hooks. Add the "ppp" hook to the "HOOKS" section in
+    "/etc/mkinitcpio.conf" and rebuild the initramfs with ("mkinitcpio -p linux").
 INSTALLEOF
 }
 
 post_remove() {
     cat<<REMOVEEOF
     Remove the "ppp" from the "HOOKS" section in "/etc/mkinitcpio.conf", then 
-    rebuild the initramfs with ("mkinitcpio -p linux").
+    rebuild the initramfs with ("mkinitcpio -p linux"). Optionally, also remove
+    any provider you might have set in /etc/ppp/peers and any secrets.
 REMOVEEOF
 }
 

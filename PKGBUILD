@@ -11,9 +11,9 @@ install=$pkgname.install
 source=('ChangeLog' "$pkgname.install" 'ppp_hook' 'ppp_install')
 changelog='ChangeLog'
 sha256sums=('e3ff4bf495ff342c591f8036d15eb613b4f216bd9498ad83791aaf6341b786a3'
-            '75d1de5480b1fbdbd81dd16c6b2b65f8167e50105e4be4f0f52ce517ead9cf8e'
-            '257bee86a3f6c1b3d99ed77fbeb96389a24ee5859ac3978efa796c9a763b68b3'
-            '43843daa8ec2c9a65dec35bc91885de7ea03f49738b3a9a47ecbb1c95d5da2ca')
+            '7f348d4bf74d19795b1c6e96fcb1ea1d30206434417a7b38b35354287c0d6dae'
+            '8db2ae7bc35bba941883f323d3b285433c8035ffa7473547f1fe5b7b4e523b5b'
+            '6a2d1234f411dd0393b42207c2447d53eaa19fd7887991870a04648ec2e49f6b')
 
 package() {
   install -Dm644 "$srcdir/ppp_hook"      "$pkgdir/usr/lib/initcpio/hooks/ppp"

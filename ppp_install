@@ -2,9 +2,10 @@
 build ()
 {
   # Are we even needed?
-    if [ ! $(ls /etc/ppp/peers/* 2>/dev/null) ]; then
-    echo "There are no providers configured under /etc/ppp/peers; exit"
-    return 0
+  ls /etc/ppp/peers/* > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+      echo "There are no providers configured under /etc/ppp/peers; exit"
+      return 0
   fi
 
   # if TMPDIR is set leave it alone otherwise set
@@ -32,8 +33,11 @@ help ()
 {
     cat<<HELPEOF
 This hook can be used in combination with the dropbear_initrd_encrypt hooks.
-It will look for a "ppp.provider" kernel parameter containing the filename of
-a provider in the /etc/ppp/peers directory, and will dial to that provider.
+It will look for both "ppp.provider" and "ppp.device" kernel parameters.
+The first defines which provider is dialed. The latter determines which
+physical device is used in the connection (eth0, eth1, ...). This is
+required so your system won't boot in an inconsistent state regarding your
+interfaces names.
 HELPEOF
 }
 
