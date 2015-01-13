@@ -2,8 +2,8 @@
 
 run_hook ()
 {
-    if [ -n "${pppd.provider}" ]; then
-	provider="${pppd.provider}"
+    if [ -n "${ppp.provider}" ]; then
+	provider="${ppp.provider}"
     fi
     echo "Starting ppp"
     pppd call "${provider}"
