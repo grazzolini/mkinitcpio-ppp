@@ -12,7 +12,7 @@ source=('ChangeLog' "$pkgname.install" 'ppp_hook' 'ppp_install')
 changelog='ChangeLog'
 sha256sums=('e3ff4bf495ff342c591f8036d15eb613b4f216bd9498ad83791aaf6341b786a3'
             '75d1de5480b1fbdbd81dd16c6b2b65f8167e50105e4be4f0f52ce517ead9cf8e'
-            '4d9d72518208496e1a6868962753d8f99812232f5f45b098c12279888f32c96f'
+            '257bee86a3f6c1b3d99ed77fbeb96389a24ee5859ac3978efa796c9a763b68b3'
             '86ad9ae03f575c34309d0e1cce8adf9d82586fd816ecb26be2f91738006bb5bb')
 
 package() {
