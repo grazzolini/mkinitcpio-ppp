@@ -8,8 +8,8 @@ post_install() {
     works before adding the hooks and rebuilding your initramfs.
     
     Afterwards add to your bootloader configuration two kernel parameters called
-    ppp.provider and ppp.device in which the ppp.provider value is the filename of
-    the provider you created, without the full path. The ppp.device is the physical
+    ppp_provider and ppp_device in which the ppp_provider value is the filename of
+    the provider you created, without the full path. The ppp_device is the physical
     device used for the ppp connection, such as eth0 or eth1. This hook is suited
     for remote unlocking of an encrypted root partition, using the
     dropbear_initrd_encrypt hooks. Add the "ppp" hook to the "HOOKS" section in

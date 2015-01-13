@@ -33,7 +33,7 @@ help ()
 {
     cat<<HELPEOF
 This hook can be used in combination with the dropbear_initrd_encrypt hooks.
-It will look for both "ppp.provider" and "ppp.device" kernel parameters.
+It will look for both "ppp_provider" and "ppp_device" kernel parameters.
 The first defines which provider is dialed. The latter determines which
 physical device is used in the connection (eth0, eth1, ...). This is
 required so your system won't boot in an inconsistent state regarding your
