@@ -16,6 +16,7 @@ build ()
   umask 0022
 
   add_checked_modules "/drivers/net/"
+  add_module "ppp_generic"
   add_binary "pppd"
   add_full_dir /etc/ppp
   add_full_dir /usr/lib/pppd
