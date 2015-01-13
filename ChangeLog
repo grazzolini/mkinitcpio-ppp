@@ -1,3 +1,10 @@
+2015-01-13 Giancarlo Razzolini <grazzolini@gmail.com>
+
+	* 0.0.2 :
+	- The kernel parameters names changed. A new one was added, for setting up the device pre-connection.
+	- There were missing modules that would prevent pppd from running. They were added to the installation.
+	- Changes in the help and install texts.
+	
 2015-01-12 Giancarlo Razzolini <grazzolini@gmail.com>
 
 	* 0.0.1 :
